@@ -3,7 +3,11 @@ import axios from "axios";
 import config from "./config.json";
 
 function App() {
-  const [videos, setVideos] = useState([]);
+  const [videos, setVideos] = useState([
+    {snippet: {
+      title: 'Test'
+    }}
+  ]);
 
   useEffect(() => {
     axios.get(config.YOUTUBE_BASE_URI, {
