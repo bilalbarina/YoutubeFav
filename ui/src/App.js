@@ -1,5 +1,5 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
+import axios from "axios";
 import config from "./config.json";
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
     <div className="">
       <ul>
         {videos.map((video) => (
-          <li> {video.snippet.title} </li>
+          <li className="text-lg font-bold"> {video.snippet.title} </li>
         ))}
       </ul>
     </div>
