@@ -17,8 +17,8 @@ class FavoriteResource extends JsonResource
         return [
             'video_id' => $this->video_id,
             'video_title' => $this->video_title,
+            'video_description' => $this->video_description,
             'video_thumb' => $this->video_thumb,
-            'video_creator' => $this->video_creator,
             'added_at' => $this->created_at,
         ];
     }

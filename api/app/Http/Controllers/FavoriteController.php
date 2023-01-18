@@ -27,12 +27,14 @@ class FavoriteController extends Controller
         $request->validate([
             'video_id' => ['required', 'alpha_dash'],
             'video_title' => ['required', 'string'],
+            'video_description' => ['required', 'string'],
             'video_thumb' => ['required', 'url'],
         ]);
 
         Favorite::create([
             'video_id' => $request->video_id,
             'video_title' => $request->video_title,
+            'video_description' => $request->video_description,
             'video_thumb' => $request->video_thumb,
         ]);
 

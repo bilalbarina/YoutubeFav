@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('video_id')->unique();
             $table->string('video_title');
+            $table->string('video_description');
             $table->string('video_thumb');
             $table->timestamps();
         });
