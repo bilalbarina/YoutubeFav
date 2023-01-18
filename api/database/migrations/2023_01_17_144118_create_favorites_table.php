@@ -15,10 +15,9 @@ return new class extends Migration
     {
         Schema::create('favorites', function (Blueprint $table) {
             $table->id();
-            $table->string('video_id');
+            $table->string('video_id')->unique();
             $table->string('video_title');
             $table->string('video_thumb');
-            $table->string('video_creator');
             $table->timestamps();
         });
     }
