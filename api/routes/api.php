@@ -18,4 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::controller(FavoriteController::class)->prefix('favorite')->group(function() {
     Route::get('/', 'all');
     Route::post('/store', 'store');
+    Route::delete('/remove/{favorite:video_id}', 'remove');
 });
