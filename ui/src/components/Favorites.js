@@ -63,10 +63,10 @@ class Favorites extends Component {
         {this.props.showModal && (
           <>
             <Modal
-            title="Favorites"
+            title="Favoris"
               body={
                 this.props.body.length == 0
-                  ? "No favorite videos found."
+                  ? "Aucune vidéo préférée n'a été trouvée."
                   : this.props.body
               }
               closeModal={this.props.closeModal}

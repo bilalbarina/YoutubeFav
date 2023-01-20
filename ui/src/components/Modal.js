@@ -38,7 +38,7 @@ export default function Modal(props) {
                       type="button"
                       onClick={() => props.closeModal()}
                     >
-                      Close
+                      Fermer
                     </button>
                   </div>
                 </div>
