@@ -10,7 +10,7 @@ class FavoritesDAO {
 
     companion object{
 
-        private var BASE_URL = "https://b88f-105-155-3-50.ngrok-free.app/api/"
+        private var BASE_URL = "https://e648-105-155-3-50.ngrok-free.app/api/"
 
         private fun getRetrofit(): Retrofit {
             return Retrofit.Builder()

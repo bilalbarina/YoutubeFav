@@ -37,7 +37,6 @@ class MainActivity : AppCompatActivity() {
 
                 GlobalScope.launch {
                     FavoritesDAO().save(video)
-                                                                                                                                                                                                                   delay(3000)
                 }
 
                 Toast.makeText(this, "Added to favorites.", Toast.LENGTH_LONG).show()
