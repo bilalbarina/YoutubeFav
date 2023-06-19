@@ -46,17 +46,7 @@ class FavManagerFragment : BaseFragment<FragmentTaskManagerBinding>(FragmentTask
 
     override fun listeners(view: View) {
         binding.apply {
-            floatingActionButton.setOnClickListener{
-                val action = FavManagerFragmentDirections.actionTaskManagerFragmentToTaskFormFragment(taskid = 0 )
-                view.findNavController().navigate(action)
-            }
         }
-    }
-
-
-    // Todo : Implémentez le code du button Ajouter une tâche dans le menu
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.layout_menu, menu)
     }
 
 

@@ -31,7 +31,7 @@ export class SummarizeForm extends Component {
   render() {
     return (
       <>
-        <div className="w-full flex justify-center text-center py-6">
+        <div className="w-full flex justify-center text-center py-6 overflow-y-scroll">
         <span className="text-blue-600"></span>
           {!!this.state.summary ? (
             <div className="w-full rounded-md bg-gray-200 p-4 text-left" dangerouslySetInnerHTML={{__html: this.state.summary}}>

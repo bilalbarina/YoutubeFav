@@ -15,6 +15,6 @@ interface FavsApiInterface {
     @GET("favorite")
     suspend fun getFavorites(): List<Favorite>
 
-    @POST("save")
+    @POST("store")
     suspend fun save(@Body video : Video) : Response<Any>
 }

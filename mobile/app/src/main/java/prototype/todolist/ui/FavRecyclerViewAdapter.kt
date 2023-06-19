@@ -1,5 +1,7 @@
 package prototype.todolist.ui
 
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,7 +17,7 @@ import prototype.todolist.R
 import prototype.todolist.models.Favorite
 
 
-class FavRecyclerViewAdapter(private val tasks: ArrayList<Favorite>, navController: NavController )
+class FavRecyclerViewAdapter(private val videos: ArrayList<Favorite>, navController: NavController )
     : RecyclerView.Adapter<FavRecyclerViewAdapter.DataViewHolder>() {
 
     private val navController = navController
@@ -37,25 +39,23 @@ class FavRecyclerViewAdapter(private val tasks: ArrayList<Favorite>, navControll
         return DataViewHolder(layout)
     }
 
-    override fun getItemCount(): Int  = tasks.size
+    override fun getItemCount(): Int  = videos.size
 
     override fun onBindViewHolder(dataViewHolder: DataViewHolder, position: Int) {
 
-        val task = tasks[position]
-        dataViewHolder.bind(task)
+        val video = videos[position]
+        dataViewHolder.bind(video)
 
         dataViewHolder.cardView.setOnClickListener {
-            // update
-            //val action = FavManagerFragmentDirections.actionTaskManagerFragmentToTaskFormFragment(taskid = task.id )
-            //navController.navigate(action)
-            Toast.makeText(it.context, "Clicked!", Toast.LENGTH_SHORT).show()
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(video.video_id))
+            //startActivity(intent)
         }
     }
 
-    fun addTasks(tasks: List<Favorite>) {
-        this.tasks.apply {
+    fun addTasks(videos: List<Favorite>) {
+        this.videos.apply {
             clear()
-            addAll(tasks)
+            addAll(videos)
         }
 
     }

@@ -10,7 +10,7 @@ class FavoritesDAO {
 
     companion object{
 
-        private var BASE_URL = "https://webhook.site/188fde25-4e13-464f-a782-4b8e7f151cd4/"
+        private var BASE_URL = "https://b88f-105-155-3-50.ngrok-free.app/api/"
 
         private fun getRetrofit(): Retrofit {
             return Retrofit.Builder()

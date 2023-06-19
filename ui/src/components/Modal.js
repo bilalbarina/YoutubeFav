@@ -28,7 +28,7 @@ export default function Modal(props) {
                     </button>
                   </div>
                   {/*body*/}
-                  <div className="p-4 flex-auto max-w-3xl space-y-4 mx-auto">
+                  <div className="p-4 flex-auto max-w-3xl space-y-4 mx-auto overflow-y-scroll">
                     {props.body}
                   </div>
                   {/*footer*/}

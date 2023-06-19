@@ -27,9 +27,6 @@ class FavoriteController extends Controller
     {
         $request->validate([
             'video_id' => ['required', 'alpha_dash'],
-            // 'video_title' => ['required', 'string'],
-            // 'video_description' => ['nullable', 'sometimes', 'string'],
-            // 'video_thumb' => ['nullable', 'sometimes', 'url'],
         ]);
 
         $videoId = $request->video_id;

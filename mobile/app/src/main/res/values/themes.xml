@@ -5,5 +5,5 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.Todolist" parent="Base.Theme.Todolist" />
+    <style name="Theme.Youmarize" parent="Base.Theme.Todolist" />
 </resources>

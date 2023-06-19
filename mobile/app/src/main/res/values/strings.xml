@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Todo list</string>
+    <string name="app_name"> Favorites </string>
     <string name="search">Search</string>
     <string name="sort_by_high_priority">Sort by High Priority</string>
     <string name="enter_task">Enter Task</string>
