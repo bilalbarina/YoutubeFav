@@ -1,4 +1,5 @@
 import Modal from "./Modal";
+import { SummarizeForm } from "./SummarizeForm";
 
 export default function VideoPlayer(props) {
   return (
@@ -6,12 +7,16 @@ export default function VideoPlayer(props) {
       <Modal
         title="Video"
         body={
-          <iframe
-            width="420"
-            height="315"
-            className="rounded-md"
-            src={`https://www.youtube.com/embed/${props.videoId}`}
-          ></iframe>
+          <>
+            <iframe
+              className="rounded-md w-full"
+              allowfullscreen
+              allowtransparency
+              height={240}
+              src={`https://www.youtube.com/embed/${props.videoId}`}
+            ></iframe>
+            <SummarizeForm videoId={props.videoId}/>
+          </>
         }
         closeModal={props.closeModal}
       />

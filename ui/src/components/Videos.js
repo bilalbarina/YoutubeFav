@@ -27,7 +27,7 @@ class Videos extends Component {
 
   componentDidMount() {
     this.getFavorites();
-    this.search("Tanger");
+    this.search("AI");
   }
 
   handleAddFavorite = async (
@@ -113,7 +113,7 @@ class Videos extends Component {
 
   getFavorites = async () => {
     return axios.get(config.API_BASE_URI + "favorite").then((response) => {
-      this.setState({ favorites: response.data.data });
+      this.setState({ favorites: response.data });
     });
   };
 
@@ -130,7 +130,7 @@ class Videos extends Component {
           q: query,
           part: "snippet",
           maxResults: 20,
-          regionCode: "MA",
+          regionCode: "US",
           type: "video",
           key: config.YOUTUBE_API_KEY,
         },
@@ -172,7 +172,7 @@ class Videos extends Component {
                 <input
                   type="text"
                   // placeholder="Search on YouTube"
-                  placeholder="Tanger"
+                  placeholder="AI"
                   onInput={(e) =>
                     this.setState({ searchQuery: e.target.value })
                   }

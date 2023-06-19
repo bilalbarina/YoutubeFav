@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\YouTube;
 use App\Http\Resources\FavoriteResource;
 use App\Models\Favorite;
 use Illuminate\Http\Request;
@@ -26,17 +27,34 @@ class FavoriteController extends Controller
     {
         $request->validate([
             'video_id' => ['required', 'alpha_dash'],
-            'video_title' => ['required', 'string'],
-            'video_description' => ['required', 'string'],
-            'video_thumb' => ['required', 'url'],
+            // 'video_title' => ['required', 'string'],
+            // 'video_description' => ['nullable', 'sometimes', 'string'],
+            // 'video_thumb' => ['nullable', 'sometimes', 'url'],
         ]);
 
-        Favorite::create([
-            'video_id' => $request->video_id,
-            'video_title' => $request->video_title,
-            'video_description' => $request->video_description,
-            'video_thumb' => $request->video_thumb,
-        ]);
+        $videoId = $request->video_id;
+
+        if ($request->has('video_title')) {
+            $data = [
+                'video_id' => $request->video_id,
+                'video_title' => $request->video_title,
+                'video_thumb' => $request->video_thumb,
+            ];
+        } else {
+            $youtubeData = YouTube::getVideo($videoId);
+            $videoTitle = $youtubeData['snippet']['title'];
+            $videoThumb = $youtubeData['snippet']['thumbnails']['high']['url'];
+
+            $data = [
+                'video_id' => $request->video_id,
+                'video_title' => $videoTitle,
+                'video_thumb' => $videoThumb,
+            ];
+        }
+
+        $data['user_id'] = auth()->user()?->id;
+
+        Favorite::create($data);
 
         return response()->json([
             'success' => true,
