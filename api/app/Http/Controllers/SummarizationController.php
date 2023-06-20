@@ -25,7 +25,7 @@ class SummarizationController extends Controller
         } else {
             $req = Http::timeout(1200)->withHeaders([
                 'openai-api-key' => env('OPENAI_APIKEY'),
-                'X-RapidAPI-Key' => '1af53f42f8mshf9950cac7e58db4p1295dcjsn5de8a70a3632',
+                'X-RapidAPI-Key' => env('RAPIDAPI_KEY'),
                 'X-RapidAPI-Host' => 'youtube-video-summarizer1.p.rapidapi.com',
             ])->get('https://youtube-video-summarizer1.p.rapidapi.com/v1/youtube/summarizeVideoWithToken', [
                 'videoURL' => $videoURL,

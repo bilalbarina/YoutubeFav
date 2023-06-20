@@ -10,7 +10,7 @@ class YouTube {
         $url = 'https://youtube.googleapis.com/youtube/v3/videos' . '?' . http_build_query([
             'part' => 'snippet',
             'id' => $videoId,
-            'key' => 'AIzaSyB6lHRAC6dht0pR14Rx-w79kQwnSmXwHRc'
+            'key' => env('YOUTUBE_APIKEY')
         ]);
 
         $req = Http::get($url);
