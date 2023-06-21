@@ -47,7 +47,10 @@ class FavRecyclerViewAdapter(private val videos: ArrayList<Favorite>, navControl
         dataViewHolder.bind(video)
 
         dataViewHolder.cardView.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://youtu.be/${video.video_id}"))
+            val videoId = video.video_id
+            val url = "https://youtu.be/$videoId"
+            val uri = Uri.parse(url)
+            val intent = Intent(Intent.ACTION_VIEW, uri)
             dataViewHolder.itemView.context?.startActivity(intent)
         }
     }

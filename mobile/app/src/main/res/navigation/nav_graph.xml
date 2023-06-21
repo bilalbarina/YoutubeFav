@@ -9,20 +9,5 @@
         android:id="@+id/taskManagerFragment"
         android:name="prototype.todolist.ui.FavManagerFragment"
         android:label="TaskManagerFragment" >
-        <action
-            android:id="@+id/action_taskManagerFragment_to_taskFormFragment"
-            app:destination="@id/taskFormFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/taskFormFragment"
-        android:name="prototype.todolist.ui.TaskFormFragment"
-        android:label="fragment_task_form"
-        tools:layout="@layout/fragment_task_form" >
-        <argument
-            android:name="taskid"
-            app:argType="integer" />
-        <action
-            android:id="@+id/action_taskFormFragment_to_taskManagerFragment"
-            app:destination="@id/taskManagerFragment" />
     </fragment>
 </navigation>

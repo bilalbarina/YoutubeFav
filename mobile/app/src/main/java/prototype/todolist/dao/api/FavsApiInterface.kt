@@ -5,6 +5,7 @@ import prototype.todolist.models.Video
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.DELETE
+import retrofit2.http.Field
 import retrofit2.http.GET
 import retrofit2.http.PATCH
 import retrofit2.http.POST
@@ -15,6 +16,7 @@ interface FavsApiInterface {
     @GET("favorite")
     suspend fun getFavorites(): List<Favorite>
 
-    @POST("store")
+    @POST("favorite/store")
     suspend fun save(@Body video : Video) : Response<Any>
+    // suspend fun save(@Field("video_id") video_id: String) : Response<Any>
 }
